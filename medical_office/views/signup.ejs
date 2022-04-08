@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="/stylesheets/style.css" rel="stylesheet" type="text/css" />
+        <title>Sign Up Page</title>
+    </head>
+    <body>
+        <h1>Sign Up</h1>
+        <h3>Enter the requested information below for your user profile to be created.</h3> <br>
+        <form id="signup-form" action="/signup" method="post">
+            <label for="firstName">First Name</label><br>
+            <input type="text" name="firstName" placeholder="first name"><br><br>
+            <label for="lastName">Last Name</label><br>
+            <input type="text" name="lastName" placeholder="last name"><br><br>
+            <label for="email">Email</label><br>
+            <input type="email" name="email" placeholder="email address"><br><br>
+            <label for="password">Password</label><br>
+            <input type="password" id="password" placeholder="password"><br><br>
+            <label for="dob">Date of Birth</label><br>
+            <input type="text" name="dob" placeholder="date of bith"><br><br>
+            <label for="gender">Gender</label><br>
+            <input type="text" name="gender" placeholder="gender"><br><br>
+            <input type="Submit" value="Submit"><br> 
+        </form>
+        <%- include('partials/nav.ejs') %> 
+    </body>
+</html>
