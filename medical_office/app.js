@@ -37,11 +37,13 @@ app.get('/', function(req, res){
 
 });
 
+
 //GET "/home" req, aslo fires up home page
 app.get('/home', function(req, res){
     res.render('home');
 
 });
+
 
 //GET "/signup" req, fires up sign up page
 app.get('/signup', function(req, res){
@@ -55,6 +57,20 @@ app.post('/signup', function(req, res){
     res.render('signup_success', {accountData: req.body});
 
 });
+
+//GET "/login" req, fires up log in page
+app.get('/login', function(req, res){
+    res.render('login');
+
+});
+
+//POST information enetered on sign up form
+app.post('/login', function(req, res){
+    console.log(req.body);
+    //res.render('signup_success', {accountData: req.body});
+
+});
+
 
 //server to run on port 3000
 app.listen(3000, function(){
