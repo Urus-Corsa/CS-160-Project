@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
 const { use } = require('express/lib/application');
 
 
@@ -54,9 +55,23 @@ app.get('/signup', function(req, res){
 //POST information enetered on sign up form
 app.post('/signup', function(req, res){
     console.log(req.body);
-    res.render('signup_success', {accountData: req.body});
+    //res.render('signup_success', {accountData: req.body});
+    res.render('appointment', {accountData: req.body});
 
 });
+
+//GET "/appointment" req, fires up sign up page
+app.get('/appointment', function(req, res){
+    res.render('appointment');
+
+});
+
+//POST information enetered on appointment form
+app.post('/appointment', function(req, res){
+    console.log(req.body);
+    //res.render('appointment_confirmation', {accountData: req.body});
+});
+
 
 //GET "/login" req, fires up log in page
 app.get('/login', function(req, res){
@@ -64,13 +79,12 @@ app.get('/login', function(req, res){
 
 });
 
-//POST information enetered on sign up form
+//POST information enetered on login form
 app.post('/login', function(req, res){
     console.log(req.body);
-    //res.render('signup_success', {accountData: req.body});
-
+    //res.render('appointment', {accountData: req.body});
+    
 });
-
 
 //server to run on port 3000
 app.listen(3000, function(){
